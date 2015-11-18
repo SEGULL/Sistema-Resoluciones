@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.sistema.core.domain.Datos" table="datos" >
+        <id name="id" type="java.lang.Long">
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+		<many-to-one name="Resolemitida" class="org.sistema.core.domain.Resolemitida" lazy="false" fetch="select" >
+            <column name="id_1" />
+        </many-to-one>
+        <property name="tiempofinal" type="date">
+            <column name="TiempoFinal"  />
+        </property>
+        <property name="tiempoinicio" type="date">
+            <column name="TiempoInicio" />
+        </property>
+        <property name="motivofeliz" type="string">
+            <column name="MotivoFeliz" length="50"/>
+        </property>
+
+
+
+
+    </class>
+</hibernate-mapping>
